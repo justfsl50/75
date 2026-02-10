@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "Attendance Planner - College Attendance Calculator",
     description: "Track & plan your college attendance. Know if you can skip today.",
     type: "website",
-    url: "https://attendanceplanner.app",
+    url: "https://attedanceweb.vercel.app",
   },
   alternates: {
     canonical: "/",

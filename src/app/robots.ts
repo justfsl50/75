@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/"],
       },
     ],
-    sitemap: "https://attendanceplanner.app/sitemap.xml",
+    sitemap: "https://attedanceweb.vercel.app/sitemap.xml",
   };
 }
