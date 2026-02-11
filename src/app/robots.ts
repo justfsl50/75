@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/"],
       },
     ],
-    sitemap: "https://75attedance.vercel.app/sitemap.xml",
+    sitemap: "https://attendance75calc.vercel.app/sitemap.xml",
   };
 }
