@@ -1,4 +1,4 @@
-const CACHE_NAME = "attendplanner-v2";
+const CACHE_NAME = "attendplanner-v3";
 const OFFLINE_URLS = [
   "/",
   "/manifest.json",
@@ -31,24 +31,40 @@ self.addEventListener("fetch", (event) => {
   // Skip chrome-extension and other non-http requests
   if (!request.url.startsWith("http")) return;
 
-  event.respondWith(
-    caches.match(request).then((cached) => {
-      if (cached) return cached;
-
-      return fetch(request)
+  // Network-first for page navigations (always get fresh HTML)
+  if (request.mode === "navigate") {
+    event.respondWith(
+      fetch(request)
         .then((response) => {
-          // Cache successful responses for navigation and static assets
-          if (response.ok && (request.mode === "navigate" || request.destination === "style" || request.destination === "script" || request.destination === "image")) {
+          if (response.ok) {
             const clone = response.clone();
             caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
           }
           return response;
         })
         .catch(() => {
-          // If navigation request fails, serve cached index
-          if (request.mode === "navigate") {
-            return caches.match("/") || new Response("Offline", { status: 503 });
+          return caches.match(request).then((cached) => {
+            return cached || caches.match("/") || new Response("Offline", { status: 503 });
+          });
+        })
+    );
+    return;
+  }
+
+  // Cache-first for static assets (scripts, styles, images are fingerprinted by Next.js)
+  event.respondWith(
+    caches.match(request).then((cached) => {
+      if (cached) return cached;
+
+      return fetch(request)
+        .then((response) => {
+          if (response.ok && (request.destination === "style" || request.destination === "script" || request.destination === "image")) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
           }
+          return response;
+        })
+        .catch(() => {
           return new Response("Offline", { status: 503 });
         });
     })
