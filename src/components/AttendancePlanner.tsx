@@ -45,7 +45,7 @@ export function AttendancePlanner() {
 
   return (
     <div className="space-y-4">
-      <AdSlot id="ad-slot-top" />
+      <AdSlot id="ad-slot-top" maxHeight={100} />
 
       <Tabs defaultValue="calculator" className="w-full">
         <TabsList className="grid w-full grid-cols-3">
@@ -82,7 +82,7 @@ export function AttendancePlanner() {
                 <SkipTodayChecker A={data.A} T={data.T} R={data.R} target={data.target} />
               </div>
 
-              <AdSlot id="ad-slot-mid" />
+              <AdSlot id="ad-slot-mid" maxHeight={250} />
 
               <div className="rounded-xl border border-border bg-card p-4 shadow-sm">
                 <QuickUpdateButtons onPresent={markPresent} onAbsent={markAbsent} onReset={reset} />
@@ -121,7 +121,7 @@ export function AttendancePlanner() {
         </TabsContent>
       </Tabs>
 
-      <AdSlot id="ad-slot-bottom" className="sticky bottom-0" />
+      <AdSlot id="ad-slot-bottom" className="sticky bottom-0" maxHeight={100} />
     </div>
   );
 }

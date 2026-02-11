@@ -48,7 +48,7 @@ export default function CanISkipClassPage() {
     <>
       <Header />
       <main className="mx-auto min-h-screen max-w-3xl px-4 pb-24 pt-4">
-        <AdSlot id="ad-slot-top" />
+        <AdSlot id="ad-slot-top" maxHeight={100} />
 
         <article className="prose prose-slate dark:prose-invert mx-auto mt-6">
           <h1 className="text-2xl font-bold sm:text-3xl">Can I Skip Class Today?</h1>
@@ -83,7 +83,7 @@ export default function CanISkipClassPage() {
           <EmbeddedCalculator />
         </div>
 
-        <AdSlot id="ad-slot-mid" />
+        <AdSlot id="ad-slot-mid" maxHeight={250} />
 
         <article className="prose prose-slate dark:prose-invert mx-auto mt-8">
           <h2 className="text-xl font-bold">Smart Skipping Strategy</h2>
@@ -124,7 +124,7 @@ export default function CanISkipClassPage() {
           ))}
         </article>
 
-        <AdSlot id="ad-slot-bottom" />
+        <AdSlot id="ad-slot-bottom" maxHeight={100} />
       </main>
       <Footer />
 
