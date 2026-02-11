@@ -24,36 +24,38 @@ export function AdSlot({ id, className = "", maxHeight }: AdSlotProps) {
     const el = insRef.current;
     if (!el) return;
 
-    // Use MutationObserver to detect when AdSense injects content
-    const observer = new MutationObserver(() => {
-      if (el.childElementCount > 0 || el.dataset.adStatus === "filled") {
+    const checkFilled = () => {
+      // Only show when AdSense explicitly marks the ad as "filled"
+      if (el.dataset.adStatus === "filled") {
         setFilled(true);
         observer.disconnect();
+        return true;
       }
+      return false;
+    };
+
+    const observer = new MutationObserver(() => {
+      checkFilled();
     });
 
     observer.observe(el, {
-      childList: true,
       attributes: true,
       attributeFilter: ["data-ad-status"],
     });
 
-    // Also check the data-ad-status attribute that AdSense sets
-    // "unfilled" means no ad available — keep hidden
-    const checkStatus = () => {
-      const status = el.dataset.adStatus;
-      if (status === "filled") {
-        setFilled(true);
-        observer.disconnect();
-      }
-    };
-
-    // Poll briefly in case the attribute was set before the observer attached
-    const timer = setTimeout(checkStatus, 2000);
+    // Poll a few times in case the attribute was set before the observer
+    const t1 = setTimeout(checkFilled, 1500);
+    const t2 = setTimeout(checkFilled, 3000);
+    const t3 = setTimeout(() => {
+      checkFilled();
+      observer.disconnect();
+    }, 5000);
 
     return () => {
       observer.disconnect();
-      clearTimeout(timer);
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
     };
   }, []);
 
