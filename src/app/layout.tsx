@@ -60,6 +60,11 @@ export default function RootLayout({
       <head>
           <link rel="icon" href="/icons/icon-192.png" type="image/png" />
           <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3359889042531313"
+            crossOrigin="anonymous"
+          />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider>
