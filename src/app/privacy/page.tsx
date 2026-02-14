@@ -3,8 +3,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Attendance Planner",
-  description: "Privacy policy for the Attendance Planner PWA. Learn how we handle your data.",
+  title: "Privacy Policy - Attendance75",
+  description: "Privacy policy for the Attendance75 PWA. Learn how we handle your data.",
   alternates: { canonical: "/privacy" },
 };
 
@@ -19,7 +19,7 @@ export default function PrivacyPage() {
 
           <h2>Introduction</h2>
           <p>
-            Attendance Planner (&quot;we,&quot; &quot;our,&quot; or &quot;the app&quot;) is committed to protecting your privacy. This Privacy Policy
+            Attendance75 (&quot;we,&quot; &quot;our,&quot; or &quot;the app&quot;) is committed to protecting your privacy. This Privacy Policy
             explains how our web application handles information when you use our attendance planning tool.
           </p>
 

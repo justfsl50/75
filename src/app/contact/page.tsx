@@ -3,8 +3,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Contact Us - Attendance Planner",
-  description: "Get in touch with the Attendance Planner team for questions, feedback, or support.",
+  title: "Contact Us - Attendance75",
+  description: "Get in touch with the Attendance75 team for questions, feedback, or support.",
   alternates: { canonical: "/contact" },
 };
 
@@ -34,7 +34,7 @@ export default function ContactPage() {
 
           <h3>My data disappeared after clearing browser data</h3>
           <p>
-            Attendance Planner stores all data in your browser&apos;s Local Storage. Clearing browser data, cookies, or
+            Attendance75 stores all data in your browser&apos;s Local Storage. Clearing browser data, cookies, or
             cache will remove your saved attendance information. Unfortunately, this data cannot be recovered. We
             recommend noting down your attendance numbers periodically.
           </p>

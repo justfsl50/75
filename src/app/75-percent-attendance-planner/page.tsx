@@ -5,12 +5,12 @@ import { EmbeddedCalculator } from "@/components/EmbeddedCalculator";
 import { AdSlot } from "@/components/AdSlot";
 
 export const metadata: Metadata = {
-  title: "75% Attendance Planner - Plan Your College Attendance Strategy",
+  title: "75% Attendance Strategy - Plan Your College Attendance",
   description:
     "Plan how to maintain 75% attendance in college. Calculate minimum classes needed, safe skips, and weekly attendance strategy with our free planner.",
   alternates: { canonical: "/75-percent-attendance-planner" },
   openGraph: {
-    title: "75% Attendance Planner for College Students",
+    title: "75% Attendance Strategy for College Students",
     description: "Free tool to plan and maintain 75% attendance throughout the semester.",
   },
 };
@@ -51,7 +51,7 @@ export default function SeventyFivePercentPage() {
         <AdSlot id="ad-slot-top" maxHeight={100} />
 
         <article className="prose prose-slate dark:prose-invert mx-auto mt-6">
-          <h1 className="text-2xl font-bold sm:text-3xl">75% Attendance Planner for College Students</h1>
+          <h1 className="text-2xl font-bold sm:text-3xl">75% Attendance Strategy for College Students</h1>
 
           <p>
             The 75% attendance rule is the most common requirement across colleges and universities worldwide. Whether you

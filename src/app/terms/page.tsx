@@ -3,8 +3,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Terms of Use - Attendance Planner",
-  description: "Terms of use for the Attendance Planner PWA.",
+  title: "Terms of Use - Attendance75",
+  description: "Terms of use for the Attendance75 PWA.",
   alternates: { canonical: "/terms" },
 };
 
@@ -19,13 +19,13 @@ export default function TermsPage() {
 
           <h2>Acceptance of Terms</h2>
           <p>
-            By accessing and using Attendance Planner (&quot;the app&quot;), you agree to be bound by these Terms of Use.
+            By accessing and using Attendance75 (&quot;the app&quot;), you agree to be bound by these Terms of Use.
             If you do not agree with any part of these terms, please do not use the app.
           </p>
 
           <h2>Description of Service</h2>
           <p>
-            Attendance Planner is a free web-based tool that helps college students calculate and plan their class
+            Attendance75 is a free web-based tool that helps college students calculate and plan their class
             attendance. The app provides attendance calculations, skip checking, what-if simulations, weekly planning,
             and reminder notifications.
           </p>
@@ -39,7 +39,7 @@ export default function TermsPage() {
 
           <h2>Limitation of Liability</h2>
           <p>
-            In no event shall Attendance Planner or its creators be liable for any direct, indirect, incidental,
+            In no event shall Attendance75 or its creators be liable for any direct, indirect, incidental,
             consequential, or special damages arising from the use of this app. This includes but is not limited to
             any academic consequences resulting from attendance decisions made based on the app&apos;s calculations.
           </p>
@@ -54,7 +54,7 @@ export default function TermsPage() {
 
           <h2>Intellectual Property</h2>
           <p>
-            All content, design, and code of Attendance Planner are protected by intellectual property laws. You may
+            All content, design, and code of Attendance75 are protected by intellectual property laws. You may
             not reproduce, distribute, or create derivative works without prior written permission.
           </p>
 

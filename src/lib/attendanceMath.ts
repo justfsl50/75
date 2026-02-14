@@ -60,8 +60,12 @@ export function calcRequiredFuture(A: number, T: number, R: number, target: numb
   return requiredFuture;
 }
 
-export function calcSkippable(R: number, requiredFuture: number): number {
-  return Math.max(0, R - requiredFuture);
+/** Skip from future total classes while maintaining target. Formula: floor(A/(target/100)) - T */
+export function calcSkippable(A: number, T: number, target: number): number {
+  if (T === 0) return 0;
+  const targetFrac = target / 100;
+  const maxTotalAllowed = Math.floor(A / targetFrac);
+  return Math.max(0, maxTotalAllowed - T);
 }
 
 export function calcRiskScore(currentPercent: number, target: number, skippable: number, R: number): number {
@@ -86,7 +90,7 @@ export function calcRiskScore(currentPercent: number, target: number, skippable:
 export function calcAttendance(A: number, T: number, R: number, target: number): AttendanceResult {
   const currentPercent = calcCurrentPercent(A, T);
   const requiredFuture = calcRequiredFuture(A, T, R, target);
-  const skippable = calcSkippable(R, requiredFuture);
+  const skippable = calcSkippable(A, T, target);
   const reachable = requiredFuture <= R;
   const finalPercentIfAttendAll = T + R > 0 ? ((A + R) / (T + R)) * 100 : 0;
   const riskScore = calcRiskScore(currentPercent, target, skippable, R);

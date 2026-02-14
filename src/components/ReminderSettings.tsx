@@ -108,10 +108,10 @@ export function ReminderSettings() {
       // Send a test notification
       if ("serviceWorker" in navigator) {
         const reg = await navigator.serviceWorker.ready;
-        reg.showNotification("Attendance Planner", {
+        reg.showNotification("Attendance75", {
           body: "Reminders are now active! We'll help you stay on track.",
-          icon: "/icons/icon-192.png",
-          badge: "/icons/icon-192.png",
+          icon: "/icons/icon-192.svg",
+          badge: "/icons/icon-192.svg",
         });
       }
     }

@@ -1,9 +1,9 @@
-const CACHE_NAME = "attendplanner-v3";
+const CACHE_NAME = "attendance75-v4";
 const OFFLINE_URLS = [
   "/",
   "/manifest.json",
-  "/icons/icon-192.png",
-  "/icons/icon-512.png",
+  "/icons/icon-192.svg",
+  "/icons/icon-512.svg",
 ];
 
 self.addEventListener("install", (event) => {
@@ -73,13 +73,13 @@ self.addEventListener("fetch", (event) => {
 
 // Handle push notifications
 self.addEventListener("push", (event) => {
-  const data = event.data ? event.data.json() : { title: "Attendance Planner", body: "Check your attendance!" };
+  const data = event.data ? event.data.json() : { title: "Attendance75", body: "Check your attendance!" };
 
   event.waitUntil(
-    self.registration.showNotification(data.title || "Attendance Planner", {
+    self.registration.showNotification(data.title || "Attendance75", {
       body: data.body || "Time to check your attendance",
-        icon: "/icons/icon-192.png",
-        badge: "/icons/icon-192.png",
+        icon: "/icons/icon-192.svg",
+        badge: "/icons/icon-192.svg",
       data: { url: "/" },
     })
   );

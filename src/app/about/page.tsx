@@ -3,8 +3,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "About - Attendance Planner",
-  description: "Learn about Attendance Planner, the free PWA that helps college students track and plan their attendance.",
+  title: "About - Attendance75",
+  description: "Learn about Attendance75, the free PWA that helps college students track and plan their attendance.",
   alternates: { canonical: "/about" },
 };
 
@@ -14,18 +14,18 @@ export default function AboutPage() {
       <Header />
       <main className="mx-auto min-h-screen max-w-3xl px-4 pb-24 pt-4">
         <article className="prose prose-slate dark:prose-invert mx-auto mt-6">
-          <h1 className="text-2xl font-bold">About Attendance Planner</h1>
+          <h1 className="text-2xl font-bold">About Attendance75</h1>
 
           <h2>Our Mission</h2>
           <p>
-            Attendance Planner was built with a simple mission: help college students never fall short of their attendance
+            Attendance75 was built with a simple mission: help college students never fall short of their attendance
             requirements. Every year, thousands of students are caught off guard by low attendance, leading to exam
             debarment and academic setbacks that could have been easily avoided with proper tracking.
           </p>
 
           <h2>What We Offer</h2>
           <p>
-            Attendance Planner is a completely free, no-login-required progressive web app that works offline and can be
+            Attendance75 is a completely free, no-login-required progressive web app that works offline and can be
             installed on any device. Our tool provides:
           </p>
           <ul>
@@ -52,7 +52,7 @@ export default function AboutPage() {
 
           <h2>Built for Students</h2>
           <p>
-            Attendance Planner was designed by students who experienced the attendance struggle firsthand. Every feature
+            Attendance75 was designed by students who experienced the attendance struggle firsthand. Every feature
             was built to answer a real question students face daily: Can I skip today? How many more classes do I need?
             What happens if I miss this week?
           </p>
@@ -66,7 +66,7 @@ export default function AboutPage() {
 
           <h2>Support the Project</h2>
           <p>
-            Attendance Planner is supported by non-intrusive advertisements. If you find the tool useful, simply using
+            Attendance75 is supported by non-intrusive advertisements. If you find the tool useful, simply using
             it helps us keep it free for everyone. You can also share it with classmates who might benefit from it.
           </p>
         </article>
