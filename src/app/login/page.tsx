@@ -162,7 +162,7 @@ export default function LoginPage() {
                 <Input
                   id="username"
                   type="text"
-                  placeholder="e.g. 2023BCS084"
+                  placeholder="e.g. 2023BCS000"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   autoComplete="username"

@@ -106,19 +106,24 @@ export function AttendancePlanner() {
 
     if (selectedSubject === "overall" && erpData.overallAttendance) {
       const att = erpData.overallAttendance;
+      // ERP returns totalClasses/classesAttended; some ERPs swap them - use the larger as T (total held)
+      const a = Math.min(att.classesAttended, att.totalClasses);
+      const t = Math.max(att.classesAttended, att.totalClasses);
       setData((prev) => ({
         ...prev,
-        A: att.classesAttended,
-        T: att.totalClasses,
+        A: a,
+        T: t,
         target: prev.target || 75,
       }));
     } else if (selectedSubject !== "overall" && erpData.subjectAttendance) {
       const sub = erpData.subjectAttendance.subjects.find((s) => s.id === selectedSubject);
       if (sub) {
+        const a = Math.min(sub.classesAttended, sub.totalClasses);
+        const t = Math.max(sub.classesAttended, sub.totalClasses);
         setData((prev) => ({
           ...prev,
-          A: sub.classesAttended,
-          T: sub.totalClasses,
+          A: a,
+          T: t,
           target: prev.target || 75,
         }));
       }
