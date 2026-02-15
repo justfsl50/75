@@ -210,11 +210,17 @@ export function AttendancePlanner() {
                   {erpData.dashboard.crn} &middot; Sem {erpData.dashboard.semester} &middot; {erpData.dashboard.section}
                 </p>
               </div>
-              {erpData.overallAttendance && (
-                <Badge variant="outline" className={`text-xs font-bold ${pctColor(erpData.overallAttendance.percentage)}`}>
-                  {erpData.overallAttendance.percentage.toFixed(1)}%
-                </Badge>
-              )}
+              {erpData.overallAttendance && (() => {
+                const att = erpData.overallAttendance;
+                const a = Math.min(att.classesAttended, att.totalClasses);
+                const t = Math.max(att.classesAttended, att.totalClasses);
+                const pct = t > 0 ? (a / t) * 100 : 0;
+                return (
+                  <Badge variant="outline" className={`text-xs font-bold ${pctColor(pct)}`}>
+                    {pct.toFixed(1)}%
+                  </Badge>
+                );
+              })()}
             </motion.div>
           )}
 
